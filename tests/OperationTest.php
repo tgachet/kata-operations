@@ -43,9 +43,40 @@ class OperationTest extends TestCase
         $this->assertEquals(23, $operation->add('1,21,1'));
     }
 
-    public function testItReturns23WithFourNumbers(): void
+    /**
+     * @dataProvider numberExamples
+     * @param string $toAdd
+     * @param int $expected
+     */
+    public function testItReturnsTheAddition(string $toAdd, int $expected): void
     {
         $operation = new Operation();
-        $this->assertEquals(23, $operation->add('1,21,0,1'));
+        $this->assertEquals($expected, $operation->add($toAdd));
+    }
+
+    public function numberExamples(): array
+    {
+        return [
+            '1' => [
+                '1,0',
+                1,
+            ],
+            '2' => [
+                '1,1',
+                2,
+            ],
+            '33' => [
+                '1,0,32',
+                33,
+            ],
+            '456' => [
+                '450,0,3,3',
+                456,
+            ],
+            '35' => [
+                '0,20,10,2,1,1,1',
+                35,
+            ],
+        ];
     }
 }
