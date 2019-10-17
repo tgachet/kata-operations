@@ -12,8 +12,11 @@ class Operation
             return (int) $number;
         });
 
-        [$first, $second, $third] = $numbers;
+        $total = 0;
+        foreach ($numbers as $number) {
+            $total += $number;
+        }
 
-        return $first + $second + $third;
+        return $total;
     }
 }
