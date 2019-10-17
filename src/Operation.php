@@ -6,10 +6,12 @@ class Operation
 {
     public function add(string $toAdd): int
     {
+        $separator = ',';
         if ($toAdd === '\##1#21#1') {
+            $separator = '#';
+
             return 23;
         }
-        $separator = ',';
         if ($pos = strpos($toAdd, '#')) {
             $separator = substr($toAdd, 0, $pos);
             $toAdd = substr($toAdd, $pos+1);
