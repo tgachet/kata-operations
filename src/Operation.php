@@ -8,13 +8,9 @@ class Operation
     {
         $numbers = explode(',', $toAdd);
 
-        array_walk($numbers, static function ($number) {
-            return (int) $number;
-        });
-
         $total = 0;
         foreach ($numbers as $number) {
-            $total += $number;
+            $total += (int) $number;
         }
 
         return $total;
