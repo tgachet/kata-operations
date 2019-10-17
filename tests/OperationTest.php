@@ -12,4 +12,10 @@ class OperationTest extends TestCase
         $operation = new Operation();
         $this->assertEquals(0, $operation->add('0,0'));
     }
+
+    public function testItReturnsOne(): void
+    {
+        $operation = new Operation();
+        $this->assertEquals(1, $operation->add('1,0'));
+    }
 }
