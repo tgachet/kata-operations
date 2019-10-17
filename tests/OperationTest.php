@@ -18,4 +18,10 @@ class OperationTest extends TestCase
         $operation = new Operation();
         $this->assertEquals(1, $operation->add('1,0'));
     }
+
+    public function testItReturnsTwo(): void
+    {
+        $operation = new Operation();
+        $this->assertEquals(2, $operation->add('2,0'));
+    }
 }
