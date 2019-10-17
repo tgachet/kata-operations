@@ -13,7 +13,8 @@ class Operation
         });
         $first = reset($numbers);
         $second = $numbers[1];
+        $thrid = $numbers[2];
 
-        return $first + $second;
+        return $first + $second + $thrid;
     }
 }
