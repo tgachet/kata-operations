@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class OperationTest extends TestCase
 {
+    // kata string calculator - Roy Osherove
     public function testItReturnsZero(): void
     {
         $operation = new Operation();
