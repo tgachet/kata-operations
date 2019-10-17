@@ -8,7 +8,7 @@ class Operation
     {
         $numbers = explode(',', $toAdd);
 
-        array_walk($numbers, function ($number){
+        array_walk($numbers, static function ($number) {
             return (int) $number;
         });
 

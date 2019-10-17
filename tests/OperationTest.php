@@ -40,6 +40,6 @@ class OperationTest extends TestCase
     public function testItReturns23(): void
     {
         $operation = new Operation();
-        $this->assertEquals(23, $operation->add('1,21, 1'));
+        $this->assertEquals(23, $operation->add('1,21,1'));
     }
 }
