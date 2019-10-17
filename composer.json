@@ -1,5 +1,5 @@
 {
-    "name": "kata-php-template",
+    "name": "tgachet/kata-operations",
     "description": "kata-php-template",
     "type": "project",
     "require": {
