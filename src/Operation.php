@@ -12,7 +12,7 @@ class Operation
             return (int) $number;
         });
 
-        list($first, $second, $third) = $numbers;
+        [$first, $second, $third] = $numbers;
 
         return $first + $second + $third;
     }
