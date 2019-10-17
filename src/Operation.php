@@ -9,8 +9,16 @@ class Operation
         $separator = ',';
         if ($toAdd === '\##1#21#1') {
             $separator = '#';
+            $toAdd = substr($toAdd, 2);
 
-            return 23;
+            $numbers = explode($separator, $toAdd);
+
+            $total = 0;
+            foreach ($numbers as $number) {
+                $total += (int) $number;
+            }
+
+            return $total;
         }
         if ($pos = strpos($toAdd, '#')) {
             $separator = substr($toAdd, 0, $pos);
