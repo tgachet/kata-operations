@@ -11,24 +11,27 @@ class Operation
             $separator = '#';
             $toAdd = substr($toAdd, 2);
 
-            $numbers = explode($separator, $toAdd);
-
-            $total = 0;
-            foreach ($numbers as $number) {
-                $total += (int) $number;
-            }
-
-            return $total;
+            return $this->test($toAdd, $separator);
         }
         if ($pos = strpos($toAdd, '#')) {
             $separator = substr($toAdd, 0, $pos);
             $toAdd = substr($toAdd, $pos+1);
         }
+        return $this->test($toAdd, $separator);
+    }
+
+    /**
+     * @param string $toAdd
+     * @param string $separator
+     * @return int
+     */
+    private function test(string $toAdd, string $separator): int
+    {
         $numbers = explode($separator, $toAdd);
 
         $total = 0;
         foreach ($numbers as $number) {
-            $total += (int) $number;
+            $total += (int)$number;
         }
 
         return $total;
