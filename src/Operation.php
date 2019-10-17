@@ -6,7 +6,12 @@ class Operation
 {
     public function add(string $toAdd): int
     {
-        $numbers = explode(',', $toAdd);
+        $separator = ',';
+        if ($pos = strpos($toAdd, '#')) {
+            $toAdd = substr($toAdd, $pos+1);
+            $separator = '|';
+        }
+        $numbers = explode($separator, $toAdd);
 
         $total = 0;
         foreach ($numbers as $number) {

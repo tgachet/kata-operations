@@ -79,4 +79,10 @@ class OperationTest extends TestCase
             ],
         ];
     }
+
+    public function testItReturns23WithSeparatorPipe(): void
+    {
+        $operation = new Operation();
+        $this->assertEquals(23, $operation->add('|#1|21|1'));
+    }
 }
