@@ -36,4 +36,17 @@ class Operation
 
         return $total;
     }
+
+    private function getSeparator(string $toAdd): string
+    {
+        if ($toAdd === '\##1#21#1') {
+            return '#';
+        }
+
+        if ($pos = strpos($toAdd, '#')) {
+            return substr($toAdd, 0, $pos);
+        }
+
+        return ',';
+    }
 }
