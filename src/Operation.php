@@ -8,8 +8,8 @@ class Operation
     {
         $separator = ',';
         if ($pos = strpos($toAdd, '#')) {
+            $separator = substr($toAdd, 0, $pos);
             $toAdd = substr($toAdd, $pos+1);
-            $separator = '|';
         }
         $numbers = explode($separator, $toAdd);
 

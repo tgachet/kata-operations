@@ -85,4 +85,10 @@ class OperationTest extends TestCase
         $operation = new Operation();
         $this->assertEquals(23, $operation->add('|#1|21|1'));
     }
+
+    public function testItReturns23WithSeparatorExclamation(): void
+    {
+        $operation = new Operation();
+        $this->assertEquals(23, $operation->add('!#1!21!1'));
+    }
 }
