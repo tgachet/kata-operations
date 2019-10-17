@@ -11,13 +11,13 @@ class Operation
             $separator = '#';
             $toAdd = substr($toAdd, 2);
 
-            return $this->test($toAdd, $separator);
+            return $this->splitAndSum($toAdd, $separator);
         }
         if ($pos = strpos($toAdd, '#')) {
             $separator = substr($toAdd, 0, $pos);
             $toAdd = substr($toAdd, $pos+1);
         }
-        return $this->test($toAdd, $separator);
+        return $this->splitAndSum($toAdd, $separator);
     }
 
     /**
@@ -25,7 +25,7 @@ class Operation
      * @param string $separator
      * @return int
      */
-    private function test(string $toAdd, string $separator): int
+    private function splitAndSum(string $toAdd, string $separator): int
     {
         $numbers = explode($separator, $toAdd);
 
