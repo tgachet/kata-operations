@@ -24,4 +24,10 @@ class OperationTest extends TestCase
         $operation = new Operation();
         $this->assertEquals(2, $operation->add('2,0'));
     }
+
+    public function testItReturns21(): void
+    {
+        $operation = new Operation();
+        $this->assertEquals(21, $operation->add('0,21'));
+    }
 }

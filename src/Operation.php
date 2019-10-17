@@ -8,7 +8,12 @@ class Operation
     {
         $numbers = explode(',', $toAdd);
         $first = reset($numbers);
+        $second = $numbers[1];
 
-        return (int) $first;
+        if ($first != 0) {
+            return (int) $first;
+        }
+
+        return (int) $second;
     }
 }
