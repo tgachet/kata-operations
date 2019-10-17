@@ -6,15 +6,13 @@ class Operation
 {
     public function add(string $toAdd): int
     {
-        $separator = ',';
+        $separator = $this->getSeparator($toAdd);
         if ($toAdd === '\##1#21#1') {
-            $separator = '#';
             $toAdd = substr($toAdd, 2);
 
             return $this->splitAndSum($toAdd, $separator);
         }
         if ($pos = strpos($toAdd, '#')) {
-            $separator = substr($toAdd, 0, $pos);
             $toAdd = substr($toAdd, $pos+1);
         }
         return $this->splitAndSum($toAdd, $separator);
